@@ -1,6 +1,6 @@
-import React from "react";
+import {React,useEffect} from "react";
 
-function SearchBar() {
+function SearchBar({sortBy,handleSortRadio,handleFilterChange}) {
   return (
     <div>
       <strong>Sort by:</strong>
@@ -10,7 +10,7 @@ function SearchBar() {
           value="Alphabetically"
           name="sort"
           checked={null}
-          onChange={null}
+          onChange={handleSortRadio}
         />
         Alphabetically
       </label>
@@ -20,14 +20,14 @@ function SearchBar() {
           value="Price"
           name="sort"
           checked={null}
-          onChange={null}
+          onChange={handleSortRadio}
         />
         Price
       </label>
       <br />
       <label>
         <strong>Filter:</strong>
-        <select onChange={null}>
+        <select onChange={handleFilterChange}>
           <option value="Tech">Tech</option>
           <option value="Sportswear">Sportswear</option>
           <option value="Finance">Finance</option>
